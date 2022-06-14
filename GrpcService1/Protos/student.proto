@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+option csharp_namespace = "GrpcService1";
+
+package student; //定义包名
+
+// The greeting service definition.
+service Students {
+  // Sends a greeting
+  rpc GetList(google.protobuf.Empty) returns (StudentList);
+}
+
+
+message StudentList {
+    // ...
+    repeated Student List = 1;
+}
+// 定义一个新的对象
+message Student {
+  int32 Id = 1;
+  int32 StuId = 2;
+  string Name = 3;
+  int32  CourseId = 4;
+}
+
